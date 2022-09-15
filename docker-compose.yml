@@ -9,6 +9,8 @@ services:
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
       MARIADB_ROOT_HOST: localhost
+    volumes:
+      - ./docker/data.local/mysql:/var/lib/mysql
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '--silent']
       interval: 2s
